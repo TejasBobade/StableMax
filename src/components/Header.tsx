@@ -7,9 +7,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { BiLoaderCircle } from "react-icons/bi";
 
-const Header = () => {
+export default function Header() {
   const [initialLoading, setInitialLoading] = useState<boolean>(true);
-
   const { data: session, status } = useSession();
 
   useEffect(() => {
@@ -20,7 +19,7 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 w-full h-[60px] bg-black border-b border-white/60 p-3 flex justify-between items-center z-50">
-      <Link href={"/"}>
+      <Link href="/">
         <h2 className="font-bold text-xl">StableMax</h2>
       </Link>
       {initialLoading && status === "loading" ? (
@@ -31,7 +30,7 @@ const Header = () => {
         </div>
       ) : (
         <div className="flex gap-3 justify-center items-center">
-          <Button variant="destructive" onClick={() => signOut()}>
+          <Button onClick={() => signOut()} variant="destructive">
             Logout
           </Button>
           <Link href="/profile">
@@ -44,6 +43,4 @@ const Header = () => {
       )}
     </div>
   );
-};
-
-export default Header;
+}

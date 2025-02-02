@@ -17,8 +17,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StableMax",
-  description: "Text to Image Generator",
+  title: "StableMax - Generate Images for FREE",
+  description:
+    "Generate stunning images from text using AI models for free with StableMax. Turn your ideas into visual art instantly.",
+  openGraph: {
+    title: "StableMax - Free AI Image Generation",
+    description: "Turn your text into images with our free AI-powered tool",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "StableMax - Free AI Image Generation",
+    description: "Turn your text into images with our free AI-powered tool",
+  },
 };
 
 export default function RootLayout({
