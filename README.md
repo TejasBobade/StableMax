@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StableMax - > Text To Image Generator For Free
 
-## Getting Started
+## Link - > https://stable-max-green.vercel.app
 
-First, run the development server:
+# Some IMP Website Links
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js -> https://nextjs.org/docs
+- Schadcn UI -> https://ui.shadcn.com/docs
+- Framer Motion -> https://framermotion.framer.website/
+- neonDB -> https://console.neon.tech/
+- prisma -> https://www.prisma.io/
+- next auth google prisma -> https://next-auth.js.org/v3/adapters/prisma
+- google cloud -> https://console.cloud.google.com/
+- pollination ai -> https://pollinations.ai/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# ENV
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- DATABASE_URL=
+- GOOGLE_CLIENT_ID=GOOGLE_CLIENT_ID
+- GOOGLE_CLIENT_SECRET=GOOGLE_CLIENT_SECRET
+- NEXTAUTH_SECRET=
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Tech Stack
 
-## Learn More
+- Frontend + Backend
+- Next js
+- TypeScript
+- Tailwind
+- Prisma (ORM) + Postgres (using neonDB)
+- Scadcn UI (UI component library) + Framer Motion (animation library can make complex animation simply)
+- Fully Responsive
+- Server Side Rendering
+- Vercel Deployment
 
-To learn more about Next.js, take a look at the following resources:
+# Why to use Next js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Text to image generation online website
+- Free
+- > Built with next js
+- Easy to deploy on vercel
+- server side rendering (Make applycation very fast)
+- Code is much maintainable
+- Can have nice security
+- We can use next outh (authentication setup will get easy)
+- Next js do image optimization on it's own
+- Image Based Software (Don't need to use any extra library)
+- Routing is easy and there are lots of benifit
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Terminal commands
 
-## Deploy on Vercel
+- npx create-next-app@latest
+- npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- > Shadcn UI
+- npx shadcn@latest init
+- npx install next-themes (Dark Mode)
+- npx shadcn@latest add button (Button)
+- npx shadcn@latest add avatar (Add a avatar)
+- npx shadcn@latest add input (Add a input)
+- npx shadcn@latest add form (Add a form)
+- npx shadcn@latest add toast (Add a toast)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- > Framer Motion
+- npm i framer-motion
+
+- > Prisma
+- npm i prisma
+- npx prisma init
+- npx prisma migrate dev --name init (create migration table -> means how many times we make changes in database)
+- npx prisma generate (generate prisma client)
+- npx prisma studio (we can see neonDB database)
+- npm install @prisma/client @next-auth/prisma-adapter
+
+- npm i next-auth (For Authentication)
+- npm i react-icons (For Icons)
+
+- > git reset -soft HEAD^ (It will give back the previous files that you added to github so you can add them again if you have some issue also changed file will not be shown in history -> i added .env file by mistake)
+- git rm --cached .env
+- git commit --amend -m "Fixing issue"
+- git pull
+- git push
+
+- > node
+- const crypto = require("crypto")
+- crypto.randomBytes(128).toString("hex")
+
+# Create Folder And Files
+
+- src -> cretae folder (components)
+- components -> create file (theme-provider.tsx)
+- components -> create file (Header.tsx)
+- app -> create folder (api) -> cretae folder (auth) -> create folder ([...nextauth]) -> create file (route.ts)
+- src -> create folder (utils) -> create file (authOptions.ts)
+- utils -> create file (prisma.ts)
+- app -> create file (Provider.tsx)
+- app -> create folder (cretae) -> create file (page.tsx)
+- app -> create file (template.tsx)
+- api -> create folder (image) -> create file (route.ts)
+- src -> create folder (types) -> create file (session.d.ts)
+- app -> create folder (profile) -> cretae file (page.tsx)
+
+# Some issues
+
+- npm i @radix-ui/react-icons
