@@ -1,12 +1,14 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import GradientButton from "@/components/GradientButton";
+import PhotoLibrary from "@/components/PhotoLibrary";
+import SparklingEffect from "@/components/SparklingEffect";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Home() {
+
   return (
-    <div className="w-full h-dvh flex justify-center items-center">
-      <div className="flex justify-center items-center flex-col">
+    <div className="w-full h-dvh flex justify-center">
+      <div className="mt-24 sm:mt-20 flex flex-col items-center">
         <motion.h1
           initial={{
             opacity: 0,
@@ -19,9 +21,11 @@ export default function Home() {
             filter: "blur(0px)",
           }}
           transition={{ duration: 0.35, delay: 0 }}
-          className="text-4xl sm:text-6xl font-bold"
+          className="text-6xl sm:text-6xl font-bold"
         >
-          StableMax
+          <SparklingEffect>
+            <p className="text-6xl font-bold">StableMax AI</p>
+          </SparklingEffect>
         </motion.h1>
         <motion.p
           initial={{
@@ -35,9 +39,11 @@ export default function Home() {
             filter: "blur(0px)",
           }}
           transition={{ duration: 0.35, delay: 0.35 }}
-          className="text-center text-white/50"
+          className="text-center text-white/80 mt-3 w-[50%]"
         >
-          Generate stunning images from text using AI models for free
+          Convert words to images with our free AI Image Generator Tool. Witness
+          your wildest ideas burst into vivid reality - cheap cost, no limits,
+          just pure creative magic at your fingertips!
         </motion.p>
         <motion.div
           initial={{
@@ -51,11 +57,14 @@ export default function Home() {
             filter: "blur(0px)",
           }}
           transition={{ duration: 0.35, delay: 0.7 }}
+          className="mt-5"
         >
-          <Link href="/create">
-            <Button className=" mt-3 font-bold p-5">Start Creating</Button>
-          </Link>
+          <GradientButton href="/create">Start Creating</GradientButton>
         </motion.div>
+
+        <div className="mt-24 w-[80%] mx-auto">
+          <PhotoLibrary />
+        </div>
       </div>
     </div>
   );

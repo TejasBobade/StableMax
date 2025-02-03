@@ -18,9 +18,10 @@ export default function Header() {
   }, [status, session]);
 
   return (
-    <div className="fixed top-0 w-full h-[60px] bg-black border-b border-white/60 p-3 flex justify-between items-center z-50">
-      <Link href="/">
-        <h2 className="font-bold text-xl">StableMax</h2>
+    <div className="fixed top-0 w-full h-[60px] p-3 flex justify-between items-center z-50">
+      <Link href="/" className="flex justify-center items-center">
+        <img src="/favicon.ico" alt="" />
+        <h2 className="font-bold text-xl">StableMax✨</h2>
       </Link>
       {initialLoading && status === "loading" ? (
         <BiLoaderCircle className="animate-spin" />
