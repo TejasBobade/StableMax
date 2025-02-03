@@ -1,3 +1,4 @@
+// src/components/PhotoLibrary.tsx
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -7,14 +8,13 @@ interface Photo {
   alt: string;
 }
 
-interface PhotoLibraryProps {
-  // No longer needs the 'photos' prop
-}
+// Remove the empty interface.  It's not needed.
+// interface PhotoLibraryProps extends Record<string, unknown> {}  <- REMOVE THIS
 
-const PhotoLibrary: React.FC<PhotoLibraryProps> = () => {
+const PhotoLibrary: React.FC = () => { // No need for PhotoLibraryProps
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const photos: Photo[] = [ // Sample photos are now *inside* the component
+  const photos: Photo[] = [
     { src: '/assets/img1.webp', alt: 'Photo 1' },
     { src: '/assets/img2.webp', alt: 'Photo 2' },
     { src: '/assets/img3.webp', alt: 'Photo 3' },

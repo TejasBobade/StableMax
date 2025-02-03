@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, ReactNode } from "react";
+import { useState, useEffect, ReactNode, useMemo } from "react";
 
 const SparklingEffect = ({ children }: { children: ReactNode }) => {
-  const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"];
+  const colors = useMemo(() => ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"], []);
   const [stars, setStars] = useState<{ id: number; left: string; top: string; color: string; size: number }[]>([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const SparklingEffect = ({ children }: { children: ReactNode }) => {
     generateStars();
     const interval = setInterval(generateStars, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [colors]);
 
   return (
     <div className="relative inline-block text-4xl font-bold text-white">
@@ -42,7 +42,7 @@ const SparklingEffect = ({ children }: { children: ReactNode }) => {
       >
         {children}
       </motion.span>
-      {stars.map((star, index) => (
+      {stars.map((star) => (
         <motion.div
           key={star.id}
           className="absolute"

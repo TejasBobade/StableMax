@@ -1,3 +1,5 @@
+
+// src/components/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -6,6 +8,7 @@ import { Button } from "./ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { BiLoaderCircle } from "react-icons/bi";
+import Image from 'next/image'; // Import the Image component
 
 export default function Header() {
   const [initialLoading, setInitialLoading] = useState<boolean>(true);
@@ -20,7 +23,8 @@ export default function Header() {
   return (
     <div className="fixed top-0 w-full h-[60px] p-3 flex justify-between items-center z-50">
       <Link href="/" className="flex justify-center items-center">
-        <img src="/favicon.ico" alt="" />
+        {/* Use the next/image Image component */}
+        <Image src="/favicon.ico" alt="" width={48} height={48}  /> {/* Adjust width/height as needed */}
         <h2 className="font-bold text-xl">StableMax✨</h2>
       </Link>
       {initialLoading && status === "loading" ? (
